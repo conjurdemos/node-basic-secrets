@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Secrets</title>
+    </head>
+
+    <body style="font-family: 'Lucida Console', Monaco, monospace; text-align: center;">
+        <h2>
+            {{#if secret}}
+                Click below to view your secret</br>
+                
+                <span onclick="display(this)" style="color: #000; background-color: #000; word-wrap: break-word;">
+                    {{secret}}
+                </span>
+            {{else}}
+                Secret not found! Did you forget to run using conjur env?
+            {{/if}}
+        </h2>
+
+        <div style="position: absolute; bottom: 0.25rem; width: 100%; color: #777; font-size: 50%">
+            For demo purposes only
+        </div>
+
+        <script>
+            function display(element) {
+                element.style.color = '#fff';
+            }
+        </script>
+    </body>
+</html>

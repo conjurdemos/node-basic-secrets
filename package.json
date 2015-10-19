@@ -1,0 +1,13 @@
+{
+  "name": "node-basic-secrets",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}

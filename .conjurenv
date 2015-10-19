@@ -1,0 +1,11 @@
+# Key: secret_key
+#   The name of the environment variable you'd like the following value stored in
+#
+# Value: !var demo/secret_key
+#   The "!var" tag interprets the string that follows it (in this case "demo/secret") as the 
+#   name of a Conjur variable to be obtained and associated with an environment variable named
+#   after the key in this pair.
+#
+# See app/index.js for example usage of this variable
+# More info available at https://developer.conjur.net/reference/tools/utilities/conjurenv
+secret_key: !var demo/secret_key
