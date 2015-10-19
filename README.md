@@ -18,7 +18,7 @@ The purpose of this demo is to demonstrate the usage of a secret within a basic 
 3. Run the application using the `run.sh` shell script. It will prompt you for an API key, which was generated during the previous step and can be located in the host.json file. It will then authenticate as the host we've created to request the secret and run our node application.
 
     ```
-    $ conjur env run node app
+    $ ./run.sh
     ```
 4. Navigate to [http://localhost:8080](http://localhost:8080) with your browser. 
 
