@@ -8,4 +8,4 @@
 #
 # See app/index.js for example usage of this variable
 # More info available at https://developer.conjur.net/reference/tools/utilities/conjurenv
-secret_key: !var demo/secret_key
+secret_key: !var node_basic_secrets/secret_key

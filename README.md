@@ -10,10 +10,10 @@ The purpose of this demo is to demonstrate the usage of a secret within a basic 
     ```
     $ npm update
     ``` 
-2. Run the initialize script. This will prompt you to log in to Conjur if you're not already logged in, then create a variable (named "demo/secret_key") to store a secret value for use in our web application. In a real setting, this secret could be anything from an API key to a database password.
+2. Load the policy file into Conjur. This will create a Conjur variable (named "node_basic_secrets/secret_key") to store a secret hex string for use in our web application. In a real setting, this secret could be anything from an API key to a database password.
 
     ```
-    $ ./init.sh
+    $ conjur policy load policy.rb
     ```
 3. Run the application using `conjur env` to load our secret into the process environment. Our secret is defined by it's declaration in the .conjurenv file. [Further information regarding conjur env can be found here](https://developer.conjur.net/reference/tools/utilities/conjurenv).
 
