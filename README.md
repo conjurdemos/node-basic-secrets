@@ -10,12 +10,12 @@ The purpose of this demo is to demonstrate the usage of a secret within a basic 
     ```
     $ npm update
     ``` 
-2. Load the policy file into Conjur. This will create a Conjur variable (named "node_basic_secrets/secret_key") to store a secret hex string for use in our web application. In a real setting, this secret could be anything from an API key to a database password.
+2. Run the `policy.sh` shell script. This will load our policy into Conjur, creating a layer named "app", which is essentially a group of hosts which will all be running our web application. It will also create a Conjur variable to hold a secret, which all hosts in the new layer "app" will require, so read access is granted to the entire layer. In a real setting, this variable may store something such as a database password. Finally, a new host ("host-01.node-basic-secrets.demo") is created, and added to the "app" layer. You should now have a file named host.json which contains information regarding this host.
 
     ```
-    $ conjur policy load policy.rb
+    $ ./policy.sh
     ```
-3. Run the application using `conjur env` to load our secret into the process environment. Our secret is defined by it's declaration in the .conjurenv file. [Further information regarding conjur env can be found here](https://developer.conjur.net/reference/tools/utilities/conjurenv).
+3. Run the application using the `run.sh` shell script. It will prompt you for an API key, which was generated during the previous step and can be located in the host.json file. It will then authenticate as the host we've created to request the secret and run our node application.
 
     ```
     $ conjur env run node app
